@@ -20,7 +20,7 @@
     "type": "git",
     "url": "git@github.com:ibrokethat/ibt-func"
   },
-  "main": "index",
+  "main": "ibt-func",
   "scripts": {
     "prepublish" : "npm prune",
     "test": "mocha -u bdd"

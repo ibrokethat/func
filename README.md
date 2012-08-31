@@ -1,17 +1,17 @@
-# ibt-async
+# ibt-func
 
-Promises
+functional composition
 
 ## Install
 
-       npm install ibt-async
+       npm install ibt-func
 
 
-##  What is ibt-async?
+##  What is ibt-func?
 
 
 
-##  Using ibt-async
+##  Using ibt-func
 
 
 ## License
