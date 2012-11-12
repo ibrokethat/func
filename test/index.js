@@ -1,6 +1,6 @@
 var assert  = require("assert"),
     sinon   = require("sinon"),
-    func    = require("../ibt-func"),
+    func    = require("../func"),
     partial = func.partial,
     bind    = func.bind,
     compose = func.compose,

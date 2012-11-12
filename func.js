@@ -1,10 +1,10 @@
 /**
   @module  function
 */
-require("ibt-Object");
+require("Object");
 
-var iter    = require("ibt-iter"),
-    is      = require("ibt-is"),
+var iter    = require("iter"),
+    is      = require("is"),
     map     = iter.map,
     toArray = iter.toArray,
     typeOf  = is.typeOf;

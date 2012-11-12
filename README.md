@@ -1,17 +1,17 @@
-# ibt-func
+# func
 
 functional composition
 
 ## Install
 
-       npm install ibt-func
+       npm install func
 
 
-##  What is ibt-func?
+##  What is func?
 
 
 
-##  Using ibt-func
+##  Using func
 
 
 ## License
