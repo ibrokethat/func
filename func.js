@@ -3,12 +3,12 @@
 */
 require("Object");
 
-var iter    = require("iter"),
-    is      = require("is"),
-    map     = iter.map,
-    toArray = iter.toArray,
-    typeOf  = is.typeOf;
-    enforce = is.enforce;
+var iter    = require("iter");
+var is      = require("is");
+var map     = iter.map;
+var toArray = iter.toArray;
+var typeOf  = is.typeOf;
+var enforce = is.enforce;
 
 
 /**
@@ -73,9 +73,9 @@ function compose() {
 
   return function () {
 
-    var funcs = [].concat(functions),
-        args = arguments,
-        func;
+    var funcs = [].concat(functions);
+    var args = arguments;
+    var func;
 
     while (funcs.length) {
       args = [funcs.pop().apply(null, args)];
