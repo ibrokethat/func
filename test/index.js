@@ -69,23 +69,6 @@ describe("test func module: ", function() {
 
     });
 
-    it("should bind a function that executes on its runtime scope object", function() {
-
-      var o = {
-            prop: "test"
-          };
-
-      function f(c) {
-        return this.prop + c;
-      }
-
-      o.func = bind(f);
-
-      assert.equal(o.prop + "c", o.func("c"));
-
-    });
-
-
 
   });
 

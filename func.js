@@ -11,38 +11,41 @@ var typeOf  = is.typeOf;
 var enforce = is.enforce;
 
 
+
 /**
-  @description  binds and partially applies a method to a given scope||this in any browser
+  @description  binds and partially applies a method to a given scope
   @param        {object} [scope]
   @param        {function} func
   @return       {function}
 */
 function bind(scope, func) {
 
-  var args;
+  var args = toArray(arguments);
+  args.splice(1, 1);
 
-  if (typeOf("function", arguments[0])) {
+  return func.bind.apply(func, args);
 
-    args = toArray(arguments, 1);
-
-    return function() {
-
-      return scope.apply(this, args.concat(toArray(arguments)));
-
-    };
-
-  }
-  else {
-
-    args = toArray(arguments);
-    args.splice(1, 1);
-
-    return func.bind.apply(func, args);
-
-  }
 
 }
 
+
+/**
+  @description  binds and partially applies a method to this at run time
+  @param        {object} [scope]
+  @param        {function} func
+  @return       {function}
+*/
+function lateBind(func) {
+
+  var args = toArray(arguments, 1);
+
+  return function() {
+
+    return func.apply(this, args.concat(toArray(arguments)));
+
+  };
+
+}
 
 
 /**
@@ -52,12 +55,11 @@ function bind(scope, func) {
 */
 function partial(func) {
 
-  var args = toArray(arguments);
-  args.unshift(null);
-
-  return bind.apply(null, args);
+    return func.bind.apply(func, arguments);
 
 }
+
+
 
 
 
@@ -88,6 +90,13 @@ function compose() {
 }
 
 
-exports.bind    = bind;
-exports.partial = partial;
-exports.compose = compose;
+function identity (value) {
+  return value;
+}
+
+
+exports.bind     = bind;
+exports.lateBind = lateBind;
+exports.partial  = partial;
+exports.compose  = compose;
+exports.identity = identity;

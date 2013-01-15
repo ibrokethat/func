@@ -20,7 +20,10 @@
     "type": "git",
     "url": "git@github.com:ibrokethat/func"
   },
-  "main": "func",
+  "ibrokethat": {
+    "buildClient": true
+  },
+  "main": "func.js",
   "scripts": {
     "prepublish" : "npm prune",
     "test": "mocha -u bdd"
