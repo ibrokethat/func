@@ -1,10 +1,9 @@
 /**
   @module  function
 */
-require("Object");
 
-var iter    = require("iter");
-var is      = require("is");
+var iter    = require('iter');
+var is      = require('is');
 var map     = iter.map;
 var toArray = iter.toArray;
 var typeOf  = is.typeOf;
@@ -71,7 +70,7 @@ function partial(func) {
 */
 function compose() {
 
-  var functions = map(arguments, partial(enforce, "function"));
+  var functions = map(arguments, partial(enforce, 'function'));
 
   return function () {
 
