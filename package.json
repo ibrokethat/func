@@ -1,14 +1,14 @@
 {
   "name": "func",
   "description": "ibrokethat function",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "author": "si@ibrokethat.com",
   "contributors": [
     { "name": "Simon Jefford", "email": "si@ibrokethat.com" }
   ],
   "dependencies": {
-    "is": "git+ssh://git@github.com:ibrokethat/is",
-    "iter": "git+ssh://git@github.com:ibrokethat/iter"
+    "is": "https://api.github.com/repos/ibrokethat/is/tarball#v0.0.4",
+    "iter": "https://api.github.com/repos/ibrokethat/iter/tarball#v0.0.4"
   },
   "devDependencies": {
     "mocha": "1.2.x",
