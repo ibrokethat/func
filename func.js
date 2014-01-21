@@ -2,8 +2,8 @@
   @module  function
 */
 
-var iter    = require('iter');
-var is      = require('is');
+var iter    = require('super-iter');
+var is      = require('super-is');
 var map     = iter.map;
 var toArray = iter.toArray;
 var typeOf  = is.typeOf;
