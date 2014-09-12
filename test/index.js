@@ -1,10 +1,12 @@
-var assert  = require("assert"),
-    sinon   = require("sinon"),
-    func    = require("../func"),
-    partial = func.partial,
-    bind    = func.bind,
-    compose = func.compose,
-    fakes;
+var assert  = require("assert");
+var sinon   = require("sinon");
+var func    = require("../func");
+var partial = func.partial;
+var bind    = func.bind;
+var compose = func.compose;
+var fakes;
+
+var expect = require('chai').expect;
 
 
 describe("test func module: ", function() {
@@ -125,10 +127,10 @@ describe("test func module: ", function() {
     });
 
     it("should create a function composed of other functions", function() {
-
+      //  2 4 8 16 32
       var func = compose(f1, f1, f1, f1, f1);
 
-      assert.equal(32, func(1));
+      expect(func(1)).to.be.equal(32);
 
     });
 
@@ -136,11 +138,11 @@ describe("test func module: ", function() {
 
       var func = compose(f1, f2);
 
-      assert.equal(200, func(10));
+      expect(func(10)).to.be.equal(200);
 
     });
 
-    it("should throw an error if passed a non funcyion", function() {
+    it("should throw an error if passed a non function", function() {
 
       assert.throws(function() {
         compose({});

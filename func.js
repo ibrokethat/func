@@ -82,7 +82,7 @@ function compose() {
       args = [funcs.pop().apply(null, args)];
     }
 
-    return args;
+    return args[0];
 
   }
 
