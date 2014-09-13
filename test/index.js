@@ -1,4 +1,3 @@
-var assert  = require("assert");
 var sinon   = require("sinon");
 var func    = require("../func");
 var partial = func.partial;
@@ -37,11 +36,11 @@ describe("test func module: ", function() {
         return this.prop;
       }
 
-      assert.equal(undefined, f());
+      expect(f()).to.be.undefined;
 
       f = bind(o, f);
 
-      assert.equal(o.prop, f());
+      expect(f()).to.be.equal(o.prop);
 
     });
 
@@ -51,11 +50,12 @@ describe("test func module: ", function() {
         return p1;
       };
 
-      assert.equal(undefined, f());
+
+      expect(f()).to.be.undefined;
 
       f = bind({}, f, "test");
 
-      assert.equal("test", f());
+      expect(f()).to.be.equal("test");
 
     });
 
@@ -67,7 +67,8 @@ describe("test func module: ", function() {
 
       f = bind({}, f, 10);
 
-      assert.equal(30, f(20));
+
+      expect(f(20)).to.be.equal(30);
 
     });
 
@@ -87,7 +88,7 @@ describe("test func module: ", function() {
 
       p = partial(f, "test");
 
-      assert.equal("test", p());
+      expect(p()).to.be.equal("test");
 
     });
 
@@ -101,7 +102,8 @@ describe("test func module: ", function() {
 
       p = partial(f, 10);
 
-      assert.equal(30, p(20));
+      expect(p(20)).to.be.equal(30);
+
 
     });
 
@@ -144,9 +146,9 @@ describe("test func module: ", function() {
 
     it("should throw an error if passed a non function", function() {
 
-      assert.throws(function() {
+      expect(function() {
         compose({});
-      });
+      }).to.throw;
 
     });
 

@@ -1,14 +1,14 @@
 {
   "name": "super-func",
   "description": "super functional",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "si@ibrokethat.com",
   "contributors": [
     { "name": "Simon Jefford", "email": "si@ibrokethat.com" }
   ],
   "dependencies": {
     "super-is": "0.0.x",
-    "super-iter": "0.0.x"
+    "super-iter": "git+ssh://git@github.com:ibrokethat/iter.git#v0.1.0"
   },
   "devDependencies": {
     "chai": "latest",
